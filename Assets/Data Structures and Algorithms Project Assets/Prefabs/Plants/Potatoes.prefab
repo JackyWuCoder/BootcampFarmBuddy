@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1691663871, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
+  m_Sprite: {fileID: 982331690, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -157,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1067466068, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
+  m_Sprite: {fileID: -462244608, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -181,7 +181,7 @@ GameObject:
   - component: {fileID: 5933117506259465200}
   - component: {fileID: 7031273648434218647}
   m_Layer: 6
-  m_Name: Potatotes
+  m_Name: Potatoes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -196,7 +196,7 @@ Transform:
   m_GameObject: {fileID: 6398956590713769032}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -9, y: -18, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -390,7 +390,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -16025009, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
+  m_Sprite: {fileID: -689737900, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -474,7 +474,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1277643040, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
+  m_Sprite: {fileID: -1642979176, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -558,7 +558,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1355074150, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
+  m_Sprite: {fileID: 1572858914, guid: 7f281e9bdcc9c5a45a8d06ee7342723d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
