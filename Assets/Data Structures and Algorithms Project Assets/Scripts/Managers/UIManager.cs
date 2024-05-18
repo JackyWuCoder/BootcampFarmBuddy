@@ -64,8 +64,8 @@ public class UIManager : MonoBehaviour
 
     public void ShowTotalHarvest()
     {
-        //Assignment 2
-        
+        SellHarvestUIElement newHarvestUIElement = Instantiate(_sellHarvestUIElement);
+        newHarvestUIElement.transform.SetParent(_sellHarvestHolder);
     }
 
     

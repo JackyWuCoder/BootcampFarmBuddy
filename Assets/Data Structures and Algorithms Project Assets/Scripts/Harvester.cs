@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,7 @@ public class Harvester : MonoBehaviour
 
     // Harvest to sell
     // Assignment 2 - Data structure to hold collected harvests
+    [SerializeField] private List<CollectedHarvest> collectedHarvests = new List<CollectedHarvest>();
 
     public static Harvester _instance;
        
@@ -28,17 +30,25 @@ public class Harvester : MonoBehaviour
     // Assignment 2
     public List<CollectedHarvest> GetCollectedHarvest()
     {
-        return null;
+        return collectedHarvests;
     }
 
     // Assignment 2
     public void RemoveHarvest(CollectedHarvest harvest)
     {
-        
+        collectedHarvests.Remove(harvest);
     }
 
     // Assignment 2 - CollectHarvest method to collect the harvest when picked up
-    
+    public void CollectHarvest(string plantName, int amount)
+    {
+        // Add harvested item to the list
+        DateTime currentDateTime = DateTime.Now;
+        string dateTimeString = currentDateTime.ToString("yyyy/MM/dd hh:mm: tt");
+        collectedHarvests.Add(new CollectedHarvest(plantName, dateTimeString, amount));
+        // Update UI to display collected harvest
+        UIManager._instance.ShowTotalHarvest();
+    }
 
     public void ShowHarvest(string plantName, int harvestAmount, int seedAmount, Vector2 position)
     {
@@ -66,7 +76,7 @@ public struct CollectedHarvest
     public string _name;
     public string _time;
     public int _amount;
-    
+
     public CollectedHarvest(string name, string time, int amount)
     {
         _name = name;
