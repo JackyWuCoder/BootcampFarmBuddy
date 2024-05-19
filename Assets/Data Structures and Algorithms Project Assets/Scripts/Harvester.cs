@@ -65,6 +65,59 @@ public class Harvester : MonoBehaviour
     public void SortHarvestByAmount()
     {
         // Sort the collected harvest using Quick sort
+        // Convert collectedHarvests to array for sorting
+        CollectedHarvest[] harvestArray = collectedHarvests.ToArray();
+
+        // Quick Sort algorithm
+        void QuickSortByAmount(CollectedHarvest[] arr, int low, int high)
+        {
+            if (low < high)
+            {
+                // Partition the array, and get the pivot index
+                int pivotIndex = PartitionByAmount(arr, low, high);
+
+                // Recursively sort elements before and after the pivot index
+                QuickSortByAmount(arr, low, pivotIndex - 1);
+                QuickSortByAmount(arr, pivotIndex + 1, high);
+            }
+        }
+
+        // Helper method to partition the array
+        int PartitionByAmount(CollectedHarvest[] arr, int low, int high)
+        {
+            // Choose the pivot element (last element)
+            int pivot = arr[high]._amount;
+
+            int i = low - 1; // Index of smaller element
+
+            for (int j = low; j < high; j++)
+            {
+                // If current element is smaller than or equal to the pivot
+                if (arr[j]._amount <= pivot)
+                {
+                    i++;
+
+                    // Swap arr[i] and arr[j]
+                    CollectedHarvest temp = arr[i];
+                    arr[i] = arr[j];
+                    arr[j] = temp;
+                }
+            }
+
+            // Swap arr[i+1] and arr[high] (or pivot)
+            CollectedHarvest temp1 = arr[i + 1];
+            arr[i + 1] = arr[high];
+            arr[high] = temp1;
+
+            return i + 1;
+        }
+
+        // Call the Quick Sort algorithm
+        QuickSortByAmount(harvestArray, 0, harvestArray.Length - 1);
+
+        // Update collectedHarvests with sorted harvests
+        collectedHarvests.Clear();
+        collectedHarvests.AddRange(harvestArray);
     }
 
 }
