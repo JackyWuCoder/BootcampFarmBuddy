@@ -64,8 +64,48 @@ public class UIManager : MonoBehaviour
 
     public void ShowTotalHarvest()
     {
-        SellHarvestUIElement newHarvestUIElement = Instantiate(_sellHarvestUIElement);
-        newHarvestUIElement.transform.SetParent(_sellHarvestHolder);
+        // Loop through all child objects of the parent
+        foreach (Transform child in _sellHarvestHolder)
+        {
+            // Destroy each child object
+            Destroy(child.gameObject);
+        }
+
+        Sprite[] _sprites =  Harvester._instance._harvest.GetComponent<Harvest>()._sprites;
+        Sprite tempSprite;
+        // Populate the shop with collected harvests
+        foreach (CollectedHarvest collectedHarvest in Harvester._instance.GetCollectedHarvest()) {
+
+            if (collectedHarvest._name == "Pumpkins")
+            {
+                tempSprite = _sprites[0];
+            }
+            else if (collectedHarvest._name == "Carrots")
+            {
+                tempSprite = _sprites[1];
+            }
+            else if (collectedHarvest._name == "Potatoes")
+            {
+                tempSprite = _sprites[2];
+            }
+            else if (collectedHarvest._name == "Tomatoes")
+            {
+                tempSprite = _sprites[3];
+            }
+            else if (collectedHarvest._name == "Beans")
+            {
+                tempSprite = _sprites[4];
+            }
+            else
+            {
+                tempSprite = null;
+            }
+
+            SellHarvestUIElement _sellHarvestUIElementInstance = Instantiate(_sellHarvestUIElement, _sellHarvestHolder);
+
+            _sellHarvestUIElementInstance.SetElement(collectedHarvest, collectedHarvest._name, collectedHarvest._time, 2,
+                collectedHarvest._amount, tempSprite);
+        }
     }
 
     

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Shop : MonoBehaviour
@@ -8,6 +9,8 @@ public class Shop : MonoBehaviour
     private float _coins = 0;
 
     public Action<float> OnCoinsChanged;
+
+    [SerializeField] private UpdateCoinsUI updateCoinsUI;
 
     public void BuySeed(string name, float price)
     {
@@ -30,6 +33,7 @@ public class Shop : MonoBehaviour
     public void SellHarvest(CollectedHarvest harvest, float price)
     {
         _coins += price;
+        OnCoinsChanged?.Invoke(_coins);
         Harvester._instance.RemoveHarvest(harvest);
         UIManager._instance.ShowTotalHarvest();
     }

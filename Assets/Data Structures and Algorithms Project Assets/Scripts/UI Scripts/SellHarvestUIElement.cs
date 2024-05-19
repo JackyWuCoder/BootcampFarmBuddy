@@ -32,6 +32,7 @@ public class SellHarvestUIElement : MonoBehaviour
         {
             // Assignment 2
             // Call the shop to sell the harvest
+            GameManager._instance.GetShop().SellHarvest(harvestElement, valuePerItem);
 
             Destroy(gameObject);
         });
